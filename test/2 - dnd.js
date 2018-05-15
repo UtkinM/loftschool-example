@@ -15,6 +15,7 @@ describe('ДЗ 5.2 - Div D&D', () => {
         describe('createDiv', () => {
             it('должна создавать div с произвольными размерами/позицией/цветом', () => {
                 let result = dndPage.createDiv();
+                debugger;
 
                 assert(result instanceof Element, 'не элемент');
                 assert.equal(result.tagName, 'DIV', 'имя тега не DIV');
