@@ -1,0 +1,11 @@
+import 'normalize.css'
+import './general/font.scss';
+import './components/logo.scss';
+import './components/app.scss';
+import './components/header.scss';
+import './components/button.scss';
+import './components/search.scss';
+import './components/friends-lists.scss';
+import './components/footer.scss';
+import './components/popup.scss'
+import './general/common.scss';

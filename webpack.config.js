@@ -6,6 +6,12 @@ let rules = require('./webpack.config.rules')();
 let path = require('path');
 
 rules.push({
+    test: /\.scss$/,
+    use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'sass-loader']
+    })
+}, {
     test: /\.css$/,
     use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
@@ -32,8 +38,11 @@ module.exports = {
         new ExtractTextPlugin('styles.css'),
         new HtmlPlugin({
             title: 'Loft School sample project',
-            template: 'index.hbs'
+            template: 'index.html'
         }),
         new CleanWebpackPlugin(['dist'])
-    ]
+    ],
+    watchOptions: {
+        aggregateTimeout:100
+    }
 };
